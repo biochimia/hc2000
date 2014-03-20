@@ -49,6 +49,11 @@ def get(url, blob=None):
 
     return None
 
+def delete(url):
+    _setup_s3_connection()
+    key = _get_key(url)
+    key.delete()
+
 def list(url):
     _setup_s3_connection()
 
